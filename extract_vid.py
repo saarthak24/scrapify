@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import urllib.request
 import time
 import sys
+
 def reporthook(count, block_size, total_size):
     #THIS CODE IS FROM: https://blog.shichao.io/2012/10/04/progress_speed_indicator_for_urlretrieve_in_python.html
     global start_time
@@ -15,6 +16,7 @@ def reporthook(count, block_size, total_size):
     sys.stdout.write("\r...%d%%, %d MB, %d KB/s, %d seconds passed" %
                     (percent, progress_size / (1024 * 1024), speed, duration))
     sys.stdout.flush()
+
 soup = BeautifulSoup(open("vid.html"))
 s = soup.findAll("script",{"data-cfasync":"false"})[2].text
 t = s[s.find("sources"):s.find("}]",s.find("sources"),len(s))+2]
