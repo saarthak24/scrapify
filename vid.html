@@ -14,19 +14,24 @@
 <script data-cfasync="false" type="text/javascript">jwplayer.key = "WXqsgvJ7fQqgRdn2YW0rZITilphA9AqvOr+P8d3BEyU=";</script>
 <style type="text/css">
 *{margin:0;padding:0}#picasa{position:fixed;width:100%!important;height:100%!important}
+#ifframe {position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; }
 #picasa .jw-button-color.jw-toggle, #picasa .jw-button-color:hover, #picasa .jw-button-color.jw-toggle.jw-off:hover, #picasa .jw-option:not(.jw-active-option):hover, #picasa .jw-nextup-header{color: rgb(80, 175, 203);}#picasa .jw-option.jw-active-option, #picasa .jw-progress{background: none rgb(80, 175, 203);}#picasa .jw-text, #picasa .jw-option, #picasa .jw-button-color, #picasa .jw-toggle.jw-off, #picasa .jw-skip .jw-skip-icon, #picasa .jw-nextup-body{color: rgb(204, 204, 204);}#picasa .jw-cue, #picasa .jw-knob, #picasa .jw-active-option, #picasa .jw-nextup-header{background: none rgb(204, 204, 204);}#picasa .jw-background-color{background: none rgb(20, 20, 20);}#picasa.jw-flag-time-slider-above .jw-background-color.jw-controlbar{background: linear-gradient(rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 0.247059) 30%, rgba(20, 20, 20, 0.4) 70%, rgba(20, 20, 20, 0.498039)) 100% center transparent;}#picasa.jw-flag-time-slider-above .jw-background-color.jw-slider-time{background: transparent;}#picasa .jw-color-active{color: rgb(80, 175, 203); border-color: rgb(80, 175, 203); stroke: rgb(80, 175, 203);}#picasa .jw-color-active-hover:hover{color: rgb(80, 175, 203); border-color: rgb(80, 175, 203); stroke: rgb(80, 175, 203);}#picasa .jw-color-inactive{color: rgb(204, 204, 204); border-color: rgb(204, 204, 204); stroke: rgb(204, 204, 204);}#picasa .jw-color-inactive-hover:hover{color: rgb(204, 204, 204); border-color: rgb(204, 204, 204); stroke: rgb(204, 204, 204);}#picasa .jw-video::cue{color: rgb(243, 243, 120); background-color: rgba(0, 0, 0, 0); text-shadow: rgb(0, 0, 0) 0px 0px 5px, rgb(0, 0, 0) 0px 1px 5px, rgb(0, 0, 0) 0px 2px 5px;}#picasa .jw-text-track-cue{color: rgb(243, 243, 120); background-color: rgba(0, 0, 0, 0); text-shadow: rgb(0, 0, 0) 0px 0px 5px, rgb(0, 0, 0) 0px 1px 5px, rgb(0, 0, 0) 0px 2px 5px;}#picasa .jw-video::-webkit-media-text-track-container{font-size: 37px !important;}</style>
 </head>
 <body>
 <div>
 <center>
+<div id="openload" style="display:none">
+<iframe id="ifframe" src="https://openload.co/embed/AKjmEoq6WlI"></iframe>
+</div>
 <div id="picasa" class="picasa"></div>'
 <script type="text/javascript" data-cfasync="false">
  var player = jwplayer("picasa"),
      is_vip = !0,
      first_load = !0,
+     openload = "AKjmEoq6WlI",
      eid = "fc02a656d183ad53f0fb155eb36ae9de",
-         sources =  [{"file":"https://jss139.xcloud.to/g-4gFPHf9MCesZJ/75be81ca426db2468572f5143c843db99b0c73131603c1436e64a6c59e8c3353/hd720.mp4?e=1504297190&ip=151.188.00.00","label":"720P","type":"video/mp4"},{"file":"https://jss139.xcloud.to/g-4gFPHf9MCesZJ/15178cdf1d8a1e014d8691639e39087eee4bc534164bf58a4cad4cd18445b537/480.mp4?e=1504297190&ip=151.188.00.00","label":"480P","type":"video/mp4"},{"file":"https://jss139.xcloud.to/g-4gFPHf9MCesZJ/f182e8b3926ebe64901117d609d189074d7e8b6933a0d2c5b3361b4ff08bdade/360.mp4?e=1504297190&ip=151.188.00.00","label":"360P","type":"video/mp4"}],
-   sources_2 =  [{"file":"https://jss139.xcloud.to/g-4gFPHf9MCesZJ/75be81ca426db2468572f5143c843db99b0c73131603c1436e64a6c59e8c3353/hd720.mp4?e=1504297190&ip=151.188.00.00","label":"720P","type":"video/mp4"},{"file":"https://jss139.xcloud.to/g-4gFPHf9MCesZJ/15178cdf1d8a1e014d8691639e39087eee4bc534164bf58a4cad4cd18445b537/480.mp4?e=1504297190&ip=151.188.00.00","label":"480P","type":"video/mp4"},{"file":"https://jss139.xcloud.to/g-4gFPHf9MCesZJ/f182e8b3926ebe64901117d609d189074d7e8b6933a0d2c5b3361b4ff08bdade/360.mp4?e=1504297190&ip=151.188.00.00","label":"360P","type":"video/mp4"}];
+         sources =  [{"file":"https://vqm140.xcloud.to/g-4gFPHf9MCesZJ/5d189386ab3681b2344a7fc2c78b831d091a6bb230ee00e6c47fa529ad1e99de/hd720.mp4?e=1504317205&ip=71.178.00.00","label":"720P","type":"video/mp4"},{"file":"https://vqm140.xcloud.to/g-4gFPHf9MCesZJ/5a812213898afd85ba7d0719f226d3dd784bc8681096fe8352a1e721395f72e1/480.mp4?e=1504317205&ip=71.178.00.00","label":"480P","type":"video/mp4"},{"file":"https://vqm140.xcloud.to/g-4gFPHf9MCesZJ/e352e0bfee31afe83b066764e7546ac396926f64d4e11145dd0f57bb11ca52b0/360.mp4?e=1504317205&ip=71.178.00.00","label":"360P","type":"video/mp4"}];
+   //sources_2 =  [{"file":"https://vqm140.xcloud.to/g-4gFPHf9MCesZJ/5d189386ab3681b2344a7fc2c78b831d091a6bb230ee00e6c47fa529ad1e99de/hd720.mp4?e=1504317205&ip=71.178.00.00","label":"720P","type":"video/mp4"},{"file":"https://vqm140.xcloud.to/g-4gFPHf9MCesZJ/5a812213898afd85ba7d0719f226d3dd784bc8681096fe8352a1e721395f72e1/480.mp4?e=1504317205&ip=71.178.00.00","label":"480P","type":"video/mp4"},{"file":"https://vqm140.xcloud.to/g-4gFPHf9MCesZJ/e352e0bfee31afe83b066764e7546ac396926f64d4e11145dd0f57bb11ca52b0/360.mp4?e=1504317205&ip=71.178.00.00","label":"360P","type":"video/mp4"}];
 
  player.setup({
    id:'picasa',
@@ -44,7 +49,7 @@
    image: "https://play.gomovies.sc/wait.gif",
    sources: sources,
          tracks: [{
-       file: 'https://play.gomovies.sc/sub.php?linksub=https://123movies.re/images/37680/subtitle-7x1.srt',
+       file: 'https://play.gomovies.sc/sub.php?linksub=//123movies.re/images/37680/subtitle-7x1.srt',
        label: 'English',
        kind: 'captions',
        "default":true
@@ -61,7 +66,7 @@
    }), player.on("time", function() {
            is_vip ? player.getPosition() > 60 && localStorage.setItem("go-" + eid, player.getPosition()) : player.getPosition() > 900 && (player.pause(), $("#pop-limit").modal("show"))
    }), player.on("error", function() {
-           console.log("Player error.. "), loadpl(sources_2), console.log("Sources changed..")
+           console.log("Player error.. "), loadpl(sources), console.log("Sources changed..")
    });
    function yes_resume(){
        $("#pop-resume").modal("hide"), player.seek(localStorage.getItem("go-" + eid))
@@ -93,7 +98,7 @@
        autostart: true,
        sources: surse,
                  tracks: [{
-           file: 'https://play.gomovies.sc/sub.php?linksub=https://123movies.re/images/37680/subtitle-7x1.srt',
+           file: 'https://play.gomovies.sc/sub.php?linksub=//123movies.re/images/37680/subtitle-7x1.srt',
            label: 'English',
            kind: 'captions',
            "default":true
@@ -104,7 +109,13 @@
          backgroundOpacity: 20
        },
 
-     })
+     }), player.on("error", function() {
+           console.log("Player error.. "), load_openload(), console.log("Adding openload..")
+       });
+   }
+   function load_openload(){
+       $("#ifframe").attr("src", "https://openload.co/embed/" + openload), $("#picasa").hide(), $("#openload").show();
+
    }
 </script>
 <script>
