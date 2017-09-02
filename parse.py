@@ -9,17 +9,17 @@ url = input("Enter a website to extract the URL's from: ")
 r  = requests.get(url)
 
 data = r.text
-print(data)
+# print(data)
 soup = BeautifulSoup(data,'html.parser')
 
 epFrames = soup.find("div", {"id": "list-eps"})
 
 #print(epFrames)
 
-accessToken = soup.find("a", {"title": "Episode 01: Pilot"}).get("data-drive")
+accessToken = soup.find("a", {"title": "Episode 06: Home to Roost"}).get("data-drive")
 #
 
-#print(soup.text)
+print(soup.text)
 print(accessToken)
 accessToken = "https://play.gomovies.sc/8/" + accessToken
 
