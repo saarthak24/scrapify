@@ -14,7 +14,7 @@ soup = BeautifulSoup(data, "html.parser")
 
 epFrames = soup.find("div", {"id": "list-eps"})
 
-#print(epFrames)
+print(epFrames)
 
 accessToken = soup.find("a", {"title": "Episode 01: Winter Is Coming"}).get("data-drive")
 #
