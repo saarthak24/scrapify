@@ -19,7 +19,7 @@ def reporthook(count, block_size, total_size):
     sys.stdout.flush()
 
 def download_file(html):
-    soup = BeautifulSoup(html)
+    soup = BeautifulSoup(html,"html.parser")
     s = soup.findAll("script",{"data-cfasync":"false"})[2].text
     t = s[s.find("sources"):s.find("}]",s.find("sources"),len(s))+2]
     print(t)
