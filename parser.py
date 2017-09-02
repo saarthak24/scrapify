@@ -10,8 +10,8 @@ url = input("Enter a website to extract the URL's from: ")
 r  = requests.get(url)
 
 data = r.text
-
-soup = BeautifulSoup(data, "html.parser")
+# print(data)
+soup = BeautifulSoup(data,'html.parser')
 
 epFrames = soup.find("div", {"id": "list-eps"})
 
@@ -20,6 +20,9 @@ print(epFrames)
 #HARD CODED
 accessToken = soup.find("a", {"title": "Episode 01: Skin in the Game"}).get("data-drive")
 #
+
+print(soup.text)
+print(accessToken)
 accessToken = "https://play.gomovies.sc/8/" + accessToken
 
 #     curl 'https://play.gomovies.sc/8/THo2OWFJcEEyMzJEc3dBQUJqWWsyanhzYXN6YW50SDV2dW5MUGlOUlFDRWNJdUxsN0swZnYxYW03NTV0TGFyUGM1YW5YSFRVZFFCeTZCcys4UGVxSGtlczVLbGFxTU1LcmhmM01vUTFLR2ZNY3pFdWtLN2xZeExYbExLNWxpTWlJczE5eFVFb3RLaE5YQWM5eW5acUNqSG1OMFdqbDNOT0lJRmp3Ukt5UmV6L3h3a3ZMaTVudUg0UjNDRzZVOEZQTmFLdHYxZU40SXFMTENUY0h1bHNZWGhMMzFZODZFeWwyVUEzQnFDNU85cz0=' \
