@@ -13,10 +13,10 @@ data = r.text
 soup = BeautifulSoup(data,'html.parser')
 
 epFrames = soup.find("div", {"id": "list-eps"})
-
 #print(epFrames)
 
-accessToken = soup.find("a", {"title": "Episode 06: Home to Roost"}).get("data-drive")
+#HARD CODED
+accessToken = soup.find("a", {"title": "Episode 01: Skin in the Game"}).get("data-drive")
 #
 
 print(soup.text)
