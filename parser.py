@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
 
 import requests
-import extract_vid
+import jwplayer
+import openload
 
 url = input("Enter a website to extract the URL's from: ")
 #https://gomovies.sc/tv/game-of-thrones-season-1-free-full-watch-online/watching/?ep=65&sv=8
