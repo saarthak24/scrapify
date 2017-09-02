@@ -22,6 +22,7 @@ accessToken = soup.find("a", {"title": "Episode 01: Pilot"}).get("data-drive")
 #print(soup.text)
 print(accessToken)
 accessToken = "https://play.gomovies.sc/8/" + accessToken
+
 #     curl 'https://play.gomovies.sc/8/THo2OWFJcEEyMzJEc3dBQUJqWWsyanhzYXN6YW50SDV2dW5MUGlOUlFDRWNJdUxsN0swZnYxYW03NTV0TGFyUGM1YW5YSFRVZFFCeTZCcys4UGVxSGtlczVLbGFxTU1LcmhmM01vUTFLR2ZNY3pFdWtLN2xZeExYbExLNWxpTWlJczE5eFVFb3RLaE5YQWM5eW5acUNqSG1OMFdqbDNOT0lJRmp3Ukt5UmV6L3h3a3ZMaTVudUg0UjNDRzZVOEZQTmFLdHYxZU40SXFMTENUY0h1bHNZWGhMMzFZODZFeWwyVUEzQnFDNU85cz0=' \
 # -XGET \
 # -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' \
