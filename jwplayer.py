@@ -35,7 +35,7 @@ def download_file(html):
     # r = requests.get(url)
     # with open("request_test.mp4", "wb") as code:
     #     code.write(r.content)
-    file_name = "request-vid.mp4"
+    file_name = "video.mp4"
     link = url
     with open(file_name, "wb") as f:
         print("Downloading %s" % file_name)
