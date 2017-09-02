@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
 
 import requests
-import extract_vid
+import jwplayer
+import openload
 
 url = input("Enter a website to extract the URL's from: ")
 #https://gomovies.sc/tv/game-of-thrones-season-1-free-full-watch-online/watching/?ep=65&sv=8
@@ -13,7 +14,8 @@ data = r.text
 soup = BeautifulSoup(data, "html.parser")
 
 epFrames = soup.find("div", {"id": "list-eps"})
-#print(epFrames)
+
+print(epFrames)
 
 #HARD CODED
 accessToken = soup.find("a", {"title": "Episode 01: Skin in the Game"}).get("data-drive")
