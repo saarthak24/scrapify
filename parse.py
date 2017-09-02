@@ -13,9 +13,10 @@ data = r.text
 soup = BeautifulSoup(data, "html.parser")
 
 epFrames = soup.find("div", {"id": "list-eps"})
+#print(epFrames)
 
 #HARD CODED
-accessToken = soup.find("a", {"title": "Episode 01: Pilot"}).get("data-drive")
+accessToken = soup.find("a", {"title": "Episode 01: Skin in the Game"}).get("data-drive")
 #
 accessToken = "https://play.gomovies.sc/8/" + accessToken
 
