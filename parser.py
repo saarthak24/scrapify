@@ -2,10 +2,9 @@ from bs4 import BeautifulSoup
 
 import requests
 import jwplayer
-import openload
+import extract_vid
 
 url = input("Enter a website to extract the URL's from: ")
-#https://gomovies.sc/tv/game-of-thrones-season-1-free-full-watch-online/watching/?ep=65&sv=8
 
 r  = requests.get(url)
 
@@ -38,7 +37,7 @@ headers = {
 print(accessToken)
 html = requests.get(accessToken,headers=headers).text
 print(html)
-print("k")
+
 extract_vid.download_file(html)
 
 print("Done!")
