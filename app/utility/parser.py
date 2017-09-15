@@ -17,7 +17,7 @@ epFrames = soup.find("div", {"id": "list-eps"})
 print(epFrames)
 
 #HARD CODED
-accessToken = soup.find("a", {"title": "Episode 01: Skin in the Game"}).get("data-drive")
+accessToken = soup.find("a", {"title": "Episode 01: Winter Is Coming"}).get("data-drive")
 #
 
 print(soup.text)
