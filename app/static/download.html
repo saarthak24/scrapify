@@ -1,11 +1,36 @@
 <html>
-<title>
-Download!
-</title>
+<head>
+  <title>
+  Download!
+  </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+  <script>
+  $(document).ready(function() {
+    $("#get-download").click(function(e) {
+      e.preventDefault();
+      $.getJSON('/download',
+      {
+        show_url:"https://gomovies.sc/tv/suits-season-7-free/watching/?ep=15242&sv=7",
+        season:"7",
+        episode:"1"
+      },
+      function(data){
+        console.log(data.download)
+        $("#download-now").attr("href",data.download)
+        $("#download-now").show()
+        // $("a").attr("href", "http://www.google.com/")
+      })
+    });
+});
+  </script>
+</head>
 
 <body class="body">
    <div class="container" align="left">
-		<a href="/download" target="blank"><button class='btn btn-default'>Download!</button></a>
+		<button id="get-download" class='btn btn-default'>Get Download!</button>
+    <a href="https://gomovies.sc" id="download-now" style="display: none" class="btn btn-default" download>Download</a>
    </div>
+
 </body>
 </html>
