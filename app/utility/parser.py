@@ -1,51 +1,52 @@
 from bs4 import BeautifulSoup
 
 import requests
-import jwplayer
-import extract_vid
+# import jwplayer
+from . import extract_vid
 
-url = input("Enter a website to extract the URL's from: ")
-episode = input("Enter number of desired episode: ")
-r  = requests.get(url)
 
-data = r.text
+def get_vid_url(url,episode):
+    r  = requests.get(url)
 
-soup = BeautifulSoup(data,'html.parser')
+    data = r.text
 
-epFrames = soup.find("div", {"id": "list-eps"})
+    soup = BeautifulSoup(data,'html.parser')
 
-#print(epFrames)
+    epFrames = soup.find("div", {"id": "list-eps"})
 
-ep = epFrames.findAll("a")
+    #print(epFrames)
 
-print(ep[1].get("title"))
+    ep = epFrames.findAll("a")
 
-for frame in ep:
-    if(frame.get("title").find("Episode 0" + episode) > -1):
-        if((frame.get("data-drive") is not None) and (frame.get("data-drive").find("THo") > -1)):
-            accessToken = (frame.get("data-drive"))
+    print(ep[1].get("title"))
 
-accessToken = "https://play.gomovies.sc/8/" + accessToken
+    for frame in ep:
+        if(frame.get("title").find("Episode " + episode) > -1):
+            if((frame.get("data-drive") is not None) and (frame.get("data-drive").find("THo") > -1)):
+                accessToken = (frame.get("data-drive"))
 
-print(accessToken)
+    accessToken = "https://play.gomovies.sc/8/" + accessToken
 
-'''
-#     curl 'https://play.gomovies.sc/8/THo2OWFJcEEyMzJEc3dBQUJqWWsyanhzYXN6YW50SDV2dW5MUGlOUlFDRWNJdUxsN0swZnYxYW03NTV0TGFyUGM1YW5YSFRVZFFCeTZCcys4UGVxSGtlczVLbGFxTU1LcmhmM01vUTFLR2ZNY3pFdWtLN2xZeExYbExLNWxpTWlJczE5eFVFb3RLaE5YQWM5eW5acUNqSG1OMFdqbDNOT0lJRmp3Ukt5UmV6L3h3a3ZMaTVudUg0UjNDRzZVOEZQTmFLdHYxZU40SXFMTENUY0h1bHNZWGhMMzFZODZFeWwyVUEzQnFDNU85cz0=' \
-# -XGET \
-# -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' \
-# -H 'Referer: https://gomovies.sc/tv/suits-season-7-free/watching/?ep=13442&sv=8' \
-# -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8'
-'''
+    print(accessToken)
 
-headers = {
-    'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
-    'Referer': url,
-    'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-}
+    '''
+    #     curl 'https://play.gomovies.sc/8/THo2OWFJcEEyMzJEc3dBQUJqWWsyanhzYXN6YW50SDV2dW5MUGlOUlFDRWNJdUxsN0swZnYxYW03NTV0TGFyUGM1YW5YSFRVZFFCeTZCcys4UGVxSGtlczVLbGFxTU1LcmhmM01vUTFLR2ZNY3pFdWtLN2xZeExYbExLNWxpTWlJczE5eFVFb3RLaE5YQWM5eW5acUNqSG1OMFdqbDNOT0lJRmp3Ukt5UmV6L3h3a3ZMaTVudUg0UjNDRzZVOEZQTmFLdHYxZU40SXFMTENUY0h1bHNZWGhMMzFZODZFeWwyVUEzQnFDNU85cz0=' \
+    # -XGET \
+    # -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' \
+    # -H 'Referer: https://gomovies.sc/tv/suits-season-7-free/watching/?ep=13442&sv=8' \
+    # -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8'
+    '''
 
-html = requests.get(accessToken,headers=headers).text
-print(html)
+    headers = {
+        'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+        'Referer': url,
+        'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    }
 
-extract_vid.download_file(html)
+    html = requests.get(accessToken,headers=headers).text
+    print(html)
 
-print("Done!")
+    vid_url = extract_vid.download_file(html)
+    return vid_url
+
+    print("Done!")

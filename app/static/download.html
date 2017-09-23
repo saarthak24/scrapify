@@ -11,9 +11,8 @@
       e.preventDefault();
       $.getJSON('/download',
       {
-        show_url:"https://gomovies.sc/tv/suits-season-7-free/watching/?ep=15242&sv=7",
-        season:"7",
-        episode:"1"
+        show_url:$("#gomovies-url").val(),
+        episode:$("#gomovies-ep").val()
       },
       function(data){
         console.log(data.download)
@@ -27,6 +26,8 @@
 </head>
 
 <body class="body">
+  <input type="text" id="gomovies-url" name="url" placeholder="GoMovies URL">
+  <input type="text" id="gomovies-ep" name="episode" placeholder="Episode #">
    <div class="container" align="left">
 		<button id="get-download" class='btn btn-default'>Get Download!</button>
     <a href="https://gomovies.sc" id="download-now" style="display: none" class="btn btn-default" download>Download</a>
