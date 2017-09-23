@@ -21,6 +21,8 @@ def get_vid_url(url,episode):
     print(ep[1].get("title"))
 
     for frame in ep:
+        if(int(episode) < 10):
+            episode = "0" + str(int(episode))
         if(frame.get("title").find("Episode " + episode) > -1):
             if((frame.get("data-drive") is not None) and (frame.get("data-drive").find("THo") > -1)):
                 accessToken = (frame.get("data-drive"))
